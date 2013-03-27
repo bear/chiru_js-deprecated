@@ -1,4 +1,7 @@
 chiru
 =====
 
-scatter tasks/jobs to workers
+chi(ru) chi(rasu) 
+to scatter
+
+Scatter tasks/jobs to registered workers and publish results to subscribers
