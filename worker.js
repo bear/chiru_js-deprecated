@@ -1,8 +1,8 @@
-var config = require("getconfig");
-var redis  = require("redis").createClient(config.redis.port, config.redis.host);
-var Thoonk = require("thoonk").Thoonk;
-var Job    = require("thoonk/job").Job;
-var thoonk = new Thoonk('127.0.0.1', 6379, 0);
+var config = require('getconfig');
+var redis  = require('redis').createClient(config.redis.port, config.redis.host);
+var Thoonk = require('thoonk').Thoonk;
+var Job    = require('thoonk/job').Job;
+var thoonk = new Thoonk(config.redis.host, config.redis.port, config.redis.db);
 
 // client.set("string key", "string val", redis.print);
 // client.hset("hash key", "hashtest 1", "some value", redis.print);
