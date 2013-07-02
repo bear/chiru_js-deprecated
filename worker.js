@@ -15,19 +15,14 @@ var thoonk = new Thoonk('127.0.0.1', 6379, 0);
 //     client.quit();
 // });
 
-var test = {
-    j: "foo",
-    p: {}
-};
 
 var getit = function() {
         jobs.get(0, function(err, item, gid) {
-            console.log(item);
-            
+            console.log('Job ' + gid + ': ' + item);
             jobs.finish(gid, function(err, fid) {
                 console.log('job ' + gid + ' marked as completed, queuing for next job');
                 process.nextTick(getit);
-            });
+            }, 'result');
         });
 };
 
@@ -43,6 +38,16 @@ jobs.once('subscribe_ready', function() {
     //   console.log('job ' + gid + ' pushed to queue');
     //   console.log('item ' + item);
     // });
+
+    jobs.publish('{ task: "html_head.js", parameters: ["http://foo.com"] }', 
+                 function(err, item, gid) {
+                   console.log('job submitted');
+                 },
+                 false, null,
+                 function (feed, id, result) {
+                    console.log('job ' + id + ' has finished');
+                    console.log(result);
+                 })
 
     getit();
 });
