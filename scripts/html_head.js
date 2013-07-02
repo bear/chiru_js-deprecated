@@ -4,9 +4,9 @@ var util = require('util'),
 
 function runCommand(command, cb) {
     var child;
-    console.log('command: ' + command)
+    console.log('command: ' + command);
     child = exec(command, cb);
-};
+}
 
 var pHead = {
     init: function () {
