@@ -10,7 +10,7 @@ function runCommand(command, cb) {
     child = exec(command, cb);
 }
 
-var pHead = {
+var build = {
     init: function _init() {
         log.log('init plugin');
     },
@@ -22,4 +22,4 @@ var pHead = {
     }
 };
 
-module.exports = pHead;
+module.exports = build;
