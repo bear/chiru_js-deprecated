@@ -7,7 +7,7 @@
                "port": 6379,
                "db":     0
              },
-    "bucker": { "console": false,
+    "bucker": { "console": true,
                 "level":   "debug"
               }
 }

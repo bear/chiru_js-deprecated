@@ -8,13 +8,11 @@
   },
   "description": "Task/Job System for NodeSecurity.io",
   "dependencies": {
-    "getconfig": ">=0.0.3",
-    "bucker": "0.4.0",
-    "hiredis": "0.1.15",
-    "redis": "0.8.3",
-    "socket.io": "0.9.16",
-    "node-static": "0.7.0",
-    "thoonk": "git+https://github.com/andyet/thoonk.js.git#scripting"
+    "getconfig": "0.0.5",
+    "bucker": "0.6.2",
+    "thoonk-jobs": "1.0.0",
+    "thoonk": "1.0.0",
+    "async": "0.2.9"
   },
   "devDepencency": {
     "precommit-hook": "0.3.4"
