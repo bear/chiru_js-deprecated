@@ -12,7 +12,8 @@
     "bucker": "0.6.2",
     "thoonk-jobs": "1.0.0",
     "thoonk": "1.0.0",
-    "async": "0.2.9"
+    "async": "0.2.9",
+    "githubhook": "0.4.2"
   },
   "devDepencency": {
     "precommit-hook": "0.3.4"

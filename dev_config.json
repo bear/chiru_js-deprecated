@@ -9,5 +9,9 @@
              },
     "bucker": { "console": true,
                 "level":   "debug"
-              }
+              },
+    "githubhook": {
+      "port": 3042,
+      "chiru": "https://github.com/bear/chiru"
+    }
 }

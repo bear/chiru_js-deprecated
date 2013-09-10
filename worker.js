@@ -27,7 +27,6 @@ var loadPlugin = function (name) {
     }
 };
 
-loadPlugin('html_head');
 loadPlugin('build');
 
 thoonk.registerObject('Job', Job, function _register() {
