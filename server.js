@@ -31,10 +31,10 @@ if (config.hasOwnProperty('githubhook')) {
 
     log.info('github hook service listening on port ' + port);
 
-    ghhook = githubhook(port, config.githubhook, function _hook(err, payload) {
+    var ghhook = githubhook(port, config.githubhook, function _hook(err, payload) {
         if (!err) {
             log.info('hook called');
-             jobPublisher.publish({ task: 'github', parameters: payload },
+            jobPublisher.publish({ task: 'github', parameters: payload },
                 {
                     onFinish: function _finished(feed, id, result) {
                         log.info('job ' + id + ' has finished');
@@ -48,4 +48,4 @@ if (config.hasOwnProperty('githubhook')) {
             log.error(err);
         }
     });
-};
+}
