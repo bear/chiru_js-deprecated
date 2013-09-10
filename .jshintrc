@@ -7,20 +7,6 @@
     "white": true,
     "undef": true,
     "browser": true,
-    "es5": true,
-    "predef": [
-        "app",
-        "$",
-        "FormBot",
-        "socket",
-        "confirm",
-        "alert",
-        "require",
-        "__dirname",
-        "process",
-        "exports",
-        "console",
-        "Buffer",
-        "module"
-    ]
+    "trailing": true,
+    "node": true
 }

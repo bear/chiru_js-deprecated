@@ -14,8 +14,11 @@ var pHead = {
     init: function _init() {
         log.log('init plugin');
     },
-    process: function (parameters) {
-        log.log('do something');
+    process: function (task) {
+        log.log('do something with');
+        log.log(task.task);
+        log.log(task.parameters);
+        return task;
     }
 };
 
