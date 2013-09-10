@@ -12,9 +12,8 @@ thoonk.registerObject('Job', Job, function () {
         jobPublisher.publish({ task: 'build', parameters: ['foo', 'bar', 'baz'] },
             {
                 onFinish: function _finished(feed, id, result) {
-                    log.log('job ' + id + ' has finished');
-                    console.log(result);
-                    log.log(result);
+                    log.info('job ' + id + ' has finished');
+                    log.debug(result);
                 },
             }, function _published() {
                 log.info('published');
