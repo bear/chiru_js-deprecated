@@ -34,14 +34,14 @@ if (config.hasOwnProperty('githubhook')) {
     ghhook.on('push', function _push(repo, ref, data) {
         log.info('hook called');
         jobPublisher.publish({ task: 'github', parameters: [ repo, ref, data] },
-                {
-                    onFinish: function _finished(feed, id, result) {
-                        log.info('job ' + id + ' has finished');
-                        log.debug(result);
-                    },
-                }, function _published() {
-                    log.info('published');
-                }
-            );
+            {
+                onFinish: function _finished(feed, id, result) {
+                    log.info('job ' + id + ' has finished');
+                    log.debug(result);
+                },
+            }, function _published() {
+                log.info('published');
+            }
+        );
     });
 }
