@@ -11,7 +11,7 @@
                 "level":   "debug"
               },
     "githubhook": {
-      "port": 3042,
+      "options": { "port": 3042 },
       "chiru": "https://github.com/bear/chiru"
     }
 }

@@ -28,6 +28,7 @@ var loadPlugin = function (name) {
 };
 
 loadPlugin('build');
+loadPlugin('github');
 
 thoonk.registerObject('Job', Job, function _register() {
     var worker = thoonk.objects.Job('chiru_tasks');

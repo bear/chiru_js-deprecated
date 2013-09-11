@@ -27,14 +27,13 @@ thoonk.registerObject('Job', Job, function () {
 });
 
 if (config.hasOwnProperty('githubhook')) {
-    var port = config.githubhook.port || 3042;
+    var ghhook = githubhook(config.githubhook.options);
 
-    log.info('github hook service listening on port ' + port);
+    ghhook.listen();
 
-    var ghhook = githubhook(port, config.githubhook, function _hook(err, payload) {
-        if (!err) {
-            log.info('hook called');
-            jobPublisher.publish({ task: 'github', parameters: payload },
+    ghhook.on('push', function _push(repo, ref, data) {
+        log.info('hook called');
+        jobPublisher.publish({ task: 'github', parameters: [ repo, ref, data] },
                 {
                     onFinish: function _finished(feed, id, result) {
                         log.info('job ' + id + ' has finished');
@@ -44,8 +43,5 @@ if (config.hasOwnProperty('githubhook')) {
                     log.info('published');
                 }
             );
-        } else {
-            log.error(err);
-        }
     });
 }
